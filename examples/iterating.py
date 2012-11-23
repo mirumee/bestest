@@ -12,3 +12,5 @@ def promotions(request):
         promotion = promotion_link.content_object
         if promotion.code == 'singleproduct' and not promotion.product.is_visible_to(request.user):
             del promotions[index]
+
+    return promotions
